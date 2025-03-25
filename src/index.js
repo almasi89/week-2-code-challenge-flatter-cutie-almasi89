@@ -20,5 +20,22 @@ function nameBar(characters){
         barSpan.addEventListener("click", ()=>HandleClick(character))
     });
 }
+const charInfo = document.getElementById("detailed-info")
+function fetchDetails (){
+    return fetch(`http://localhost:3000/characters/${character.id}`)
+    .then((res)=>res.json())
+    .then(HandleClick)
+    .catch(error => console.error("Error fetching character details:", error))
+}
+function HandleClick(character){
+ const characterName = document.getElementById("name")
+ characterName.innerHTML = character.name
 
+ const characterImg = document.querySelector("#detailed-info img")
+ characterImg.src = character.image
+ characterImg.alt = character.name
+ 
+ const characterVotes = document.getElementById("vote-count")
+ characterVotes.textContent = character.votes
+} 
 
