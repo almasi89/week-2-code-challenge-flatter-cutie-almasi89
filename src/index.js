@@ -58,3 +58,20 @@ function handleSubmitForm(event){
 
     addedVotes.value= ""
 }
+
+function resetClicker(){
+    const resetButton = document.getElementById("reset-btn")
+    resetButton.addEventListener("click",resetVoteCount)
+
+    function resetVoteCount(){
+        let characterVotes = document.getElementById("vote-count")
+        characterVotes.textContent = 0
+    }
+}
+
+
+function main (){
+    fetchNames()
+    addSubmitListener()
+    resetClicker()
+}
