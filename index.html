@@ -10,7 +10,9 @@
 
     <div id="character-bar">
       <!-- show characters names here -->
-    </div>
+      
+      </div>
+    
 
     <div class="characterInfo">
       <div id="detailed-info">
@@ -20,9 +22,11 @@
           src="assets/dummy.gif"
           alt="Character's Name"
         /><!-- display character image here -->
-        <h4>Total Votes: <span id="vote-count">Character's Votes</span></h4>
+       </div id>
+
+        <h4>Total Votes: <span id="vote-count"></span></h4>
         <form id="votes-form">
-          <input type="text" placeholder="Enter Votes" id="votes" name="votes" />
+          <input type="text" placeholder="Enter Votes" id="votes" name="votes" required/>
           <input type="submit" value="Add Votes" />
         </form>
         <button id="reset-btn">Reset Votes</button>
