@@ -39,3 +39,22 @@ function HandleClick(character){
  characterVotes.textContent = character.votes
 } 
 
+function addSubmitListener(){
+    const characterform = document.getElementById("votes-form")
+    characterform.addEventListener("submit", handleSubmitForm)
+}
+
+function handleSubmitForm(event){
+    event.preventDefault();
+
+    const addedVotes = document.getElementById("votes")
+    const characterVotes = document.getElementById("vote-count")
+
+    votesToAdd = parseInt(addedVotes.value,10)
+
+    const currentVotes = parseInt(characterVotes.textContent,10)
+    characterVotes.textContent = currentVotes + votesToAdd
+    
+
+    addedVotes.value= ""
+}
